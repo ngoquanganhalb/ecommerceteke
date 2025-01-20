@@ -1,42 +1,37 @@
-const User = require("../models/UserModel")
-const bcrypt = require("bcrypt")
+const Order = require("../models/OrderProduct")
 const { genneralAccessToken, genneralRefreshToken } = require("./JwtService")
 
 const createOrder = (newOrder) => {
-    return new Promise(async(resolve, reject) => {
-      console.log('newOrder', newOrder)
-        const { orderItems,paymentMethod, itemsPrice, shippingPrice, totalPrice, fullName, address, city, phone } = req.body 
+    return new Promise(async (resolve, reject) => {
+        console.log('newOrder', newOrder)
+        const { orderItems, paymentMethod, itemsPrice, shippingPrice, totalPrice, fullName, address, city, phone, user } = newOrder
 
         try {
 
-            // const hash = bcrypt.hashSync(password,10)
-            // console.log('hash',hash)
-            const createdOrder = await Order.create({      
-                orderItems, 
+            const createdOrder = await Order.create({
+                orderItems,
                 shippingAddress: {
-                  fullName,
-                  address,
-                  city,
-                  phone
-                
+                    fullName,
+                    address,
+                    city,
+                    phone
+
                 },
                 paymentMethod,
                 itemsPrice,
                 shippingPrice,
                 totalPrice,
-                user: user,
+                user
 
-                        
-                
             })
-            if (createdOrder) {
+            if (createOrder) {
                 resolve({
                     status: 'OK',
-                    message: 'SUCCESS', 
-                    data: createdUser
+                    message: 'SUCCESS',
+                    data: createdOrder
                 })
             }
-        } catch (e) { 
+        } catch (e) {
             reject(e)
         }
     })

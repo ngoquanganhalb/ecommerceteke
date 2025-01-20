@@ -9,61 +9,67 @@ import ProductDetailsPage from "../pages/ProductDetailsPage/ProductDetailsPage";
 import ProfilePage from "../pages/Profile/ProfilePage";
 import AdminPage from "../pages/AdminPage/AdminPage";
 import PaymentPage from "../pages/PaymentPage/PaymentPage";
+import OrderSuccess from "../pages/OrderSuccess/OrderSuccess";
 export const routes = [
     {
         path: '/',
         page: HomePage,
-        isShowHeader : true
+        isShowHeader: true
     },
     {
-        path: '/order', 
+        path: '/order',
         page: OrderPage,
-        isShowHeader : true
+        isShowHeader: true
     },
     {
-        path: '/payment', 
+        path: '/payment',
         page: PaymentPage,
-        isShowHeader : true
+        isShowHeader: true
     },
     {
-        path: '/products', 
+        path: '/orderSuccess',
+        page: OrderSuccess,
+        isShowHeader: true
+    },
+    {
+        path: '/products',
         page: ProductsPage,
-        isShowHeader : true 
+        isShowHeader: true
     },
     {
-        path: '/product/:type', 
+        path: '/product/:type',
         page: TypeProductsPage,
-        isShowHeader : true 
+        isShowHeader: true
     },
     {
-        path: '/sign-in', 
+        path: '/sign-in',
         page: SignInPage,
-        isShowHeader : false 
+        isShowHeader: false
     },
     {
-        path: '/sign-up', 
+        path: '/sign-up',
         page: SignUpPage,
-        isShowHeader : false 
+        isShowHeader: false
     },
     {
-        path: '/product-details/:id', 
+        path: '/product-details/:id',
         page: ProductDetailsPage,
-        isShowHeader : true 
+        isShowHeader: true
     },
     {
-        path: '/profile-user', 
+        path: '/profile-user',
         page: ProfilePage,
-        isShowHeader : true 
+        isShowHeader: true
     },
     {
-        path: '/system/admin', 
+        path: '/system/admin',
         page: AdminPage,
-        isShowHeader : false,
-        isPrivate: true 
+        isShowHeader: false,
+        isPrivate: true
     },
     {
-        path: '*', 
+        path: '*',
         page: NotFoundPage,
-        isShowHeader : false
+        isShowHeader: false
     }
 ]
